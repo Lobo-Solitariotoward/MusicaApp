@@ -32,14 +32,14 @@ import kotlinx.coroutines.launch
 @Composable
 fun DetailScreen(navController: NavController, albumId: String) {
     val repo = remember { MusicRepository() }
-    var albumDetail by remember { mutableStateOf<Album?>(null) } // ✅ solo Album, no AlbumDetail
+    var albumDetail by remember { mutableStateOf<Album?>(null) } // solo Album, no AlbumDetail
     var loading by remember { mutableStateOf(true) }
     val scope = rememberCoroutineScope()
 
     LaunchedEffect(Unit) {
         scope.launch {
             try {
-                albumDetail = repo.fetchAlbum(albumId) // ✅ fetchAlbum devuelve un Album
+                albumDetail = repo.fetchAlbum(albumId) // fetchAlbum devuelve un Album
             } catch (e: Exception) {
                 e.printStackTrace()
                 albumDetail = null // evita crash si no se encuentra

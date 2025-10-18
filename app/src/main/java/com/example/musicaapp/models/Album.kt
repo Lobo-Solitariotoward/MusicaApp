@@ -7,6 +7,6 @@ data class Album(
     val id: String,
     val title: String,
     val artist: String,
-    @SerializedName("image") val coverUrl: String, // 👈 Cambiado de "cover" a "image"
+    @SerializedName("image") val coverUrl: String,
     val description: String? = null
 ) : Serializable
