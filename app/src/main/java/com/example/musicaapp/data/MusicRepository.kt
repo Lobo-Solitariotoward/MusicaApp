@@ -12,6 +12,6 @@ class MusicRepository(
     suspend fun fetchAlbum(id: String): Album {
         val albums = api.getAlbums()
         return albums.firstOrNull { it.id == id }
-            ?: throw IllegalArgumentException("Álbum no encontrado con id $id")
+            ?: throw IllegalArgumentException("El álbum que buscas no está disponible con $id")
     }
 }
