@@ -5,6 +5,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+// Configura la conexión de red con Retrofit y OkHttp para acceder a la API de música.
 object NetworkModule {
     private const val BASE_URL = "https://music.juanfrausto.com/"
 
