@@ -8,5 +8,5 @@ data class AlbumDetail(
     val title: String,
     val artist: String,
     val description: String,
-    @SerializedName("image") val coverUrl: String
+    @SerializedName("image") val coverUrl: String // Cambio realizado aquí (image) para que te carge las imágenes
 ) : Serializable
