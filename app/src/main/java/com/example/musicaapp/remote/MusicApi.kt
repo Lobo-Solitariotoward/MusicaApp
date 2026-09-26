@@ -1,14 +1,20 @@
 package com.example.musicaapp.remote
 
 import com.example.musicaapp.models.Album
-import com.example.musicaapp.models.AlbumDetail
 import retrofit2.http.GET
-import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface MusicApi {
-    @GET("api/albums")
-    suspend fun getAlbums(): List<Album>
 
-    @GET("api/albums/{id}")
-    suspend fun getAlbum(@Path("id") id: String): AlbumDetail
+    @GET("search")
+    suspend fun getAlbums(
+        @Query("term") term: String = "rock",
+        @Query("entity") entity: String = "album",
+        @Query("limit") limit: Int = 25
+    ): ITunesResponse
 }
+
+data class ITunesResponse(
+    val resultCount: Int,
+    val results: List<Album>
+)

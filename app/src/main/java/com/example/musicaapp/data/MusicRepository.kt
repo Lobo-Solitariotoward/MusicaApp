@@ -7,10 +7,10 @@ import com.example.musicaapp.remote.NetworkModule
 class MusicRepository(
     private val api: MusicApi = NetworkModule.api
 ) {
-    suspend fun fetchAlbums(): List<Album> = api.getAlbums()
+    suspend fun fetchAlbums(): List<Album> = api.getAlbums().results
 
     suspend fun fetchAlbum(id: String): Album {
-        val albums = api.getAlbums()
+        val albums = fetchAlbums()
         return albums.firstOrNull { it.id == id }
             ?: throw IllegalArgumentException("El álbum que buscas no está disponible con $id")
     }
