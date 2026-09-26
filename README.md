@@ -21,15 +21,12 @@ Aplicación Android desarrollada en **Kotlin** con **Jetpack Compose** que consu
 
 ## Estructura del proyecto
 
-\`\`\`
-app/
-├── components/     # Componentes reutilizables (MiniPlayer, etc.)
-├── data/           # Repositorios (MusicRepository)
-├── models/         # Modelos de datos (Album, AlbumDetail)
-├── navigation/      # Rutas y navegación entre pantallas
-├── remote/         # Configuración de red (MusicApi, NetworkModule)
-└── screens/        # Pantallas de la app (Home, Detail)
-\`\`\`
+- **components/** — Componentes reutilizables (MiniPlayer, etc.)
+- **data/** — Repositorios (MusicRepository)
+- **models/** — Modelos de datos (Album, AlbumDetail)
+- **navigation/** — Rutas y navegación entre pantallas
+- **remote/** — Configuración de red (MusicApi, NetworkModule)
+- **screens/** — Pantallas de la app (Home, Detail)
 
 
 ## Cómo ejecutarlo
